@@ -99,9 +99,24 @@ Change une variable, recompile, c'est reflété partout.
 ## ✏️ Champs à compléter avant mise en ligne
 
 - [x] **Photo de profil** — intégrée dans le hero (`assets/img/`) ;
-- [ ] **E-mail** : remplace `gildas.mebada@exemple.com` dans `index.html` (2 occurrences, cherche `TODO`);
+- [x] **E-mail** — `mebadandzielouisgildas@gmail.com` (formulaire + liens directs) ;
 - [ ] **LinkedIn / autres liens** : section contact;
 - [ ] **Projets** : ajouter des cartes au fur et à mesure des dépôts GitHub publiés.
+
+## 📬 Formulaire de contact (FormSubmit)
+
+Le formulaire de la section Contact n'a **aucun backend** : il poste les messages sur
+[formsubmit.co](https://formsubmit.co), qui les relaie sur `mebadandzielouisgildas@gmail.com`.
+
+> ⚠️ **Première utilisation** : le tout premier envoi du formulaire déclenche un
+> **e-mail d'activation** de FormSubmit sur ta boîte — clique sur le lien qu'il contient
+> (une seule fois). Ensuite, tous les messages du site arrivent directement dans ta boîte.
+
+Pour changer d'adresse e-mail, modifie 3 endroits dans `index.html` :
+
+1. l'attribut `action` du `<form class="contact-form">` ;
+2. le lien `mailto:` de la zone « contact-alt » ;
+3. la carte « E-mail » des `contact-cards`.
 
 ## 🌍 Déploiement
 

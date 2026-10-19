@@ -590,14 +590,49 @@
           <span class="section-tag">07 · Contact</span>
           <h2>Un projet, un poste, une question&nbsp;?</h2>
           <p class="contact-sub">
-            Que ce soit pour du développement frontend, du contrôle qualité ou échanger sur
-            GICETECHA, je suis toujours partant pour une bonne discussion technique.
+            Écris-moi directement via ce formulaire — il arrive sur ma boîte mail et je réponds
+            vite. Tu préfères tes propres outils&nbsp;? Mon adresse et mon GitHub sont juste
+            dessous.
           </p>
 
-          <div class="contact-actions">
-            <!-- TODO : remplace par ton adresse e-mail professionnelle -->
-            <a class="btn btn--primary" href="mailto:gildas.mebada@exemple.com">
-              ✉️ Envoyer un e-mail
+          <!-- Formulaire sans backend : FormSubmit relaie les messages sur la boîte mail.
+               La première soumission déclenche un e-mail d'activation à confirmer une fois. -->
+          <form
+            class="contact-form"
+            action="https://formsubmit.co/mebadandzielouisgildas@gmail.com"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="📩 Nouveau message depuis le portfolio" />
+            <input type="hidden" name="_template" value="box" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_autoresponse" value="Merci pour ton message ! Je te réponds dès que possible — Louis Gildas" />
+            <!-- Piège anti-spam : les bots remplissent ce champ, les humains ne le voient pas -->
+            <input type="text" name="_honey" style="display: none" tabindex="-1" autocomplete="off" />
+
+            <div class="form-row">
+              <label>
+                <span>Nom</span>
+                <input type="text" name="name" placeholder="Ton nom" required />
+              </label>
+              <label>
+                <span>E-mail</span>
+                <input type="email" name="email" placeholder="ton@email.com" required />
+              </label>
+            </div>
+
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="5" placeholder="Parle-moi de ton projet, de ton poste, ou dis simplement bonjour…" required></textarea>
+            </label>
+
+            <button class="btn btn--primary form-submit" type="submit">
+              ✉️ Envoyer le message
+            </button>
+          </form>
+
+          <div class="contact-alt">
+            <a class="btn btn--ghost" href="mailto:mebadandzielouisgildas@gmail.com">
+              ✉️ mebadandzielouisgildas@gmail.com
             </a>
             <a
               class="btn btn--ghost"
@@ -605,7 +640,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              Voir mon GitHub ↗
+              GitHub ↗
             </a>
           </div>
         </div>
@@ -626,8 +661,7 @@
           <div class="contact-card card reveal" data-delay="2">
             <span class="icon-badge" aria-hidden="true">✉️</span>
             <b>E-mail</b>
-            <!-- TODO : remplace par ton adresse e-mail professionnelle -->
-            <a href="mailto:gildas.mebada@exemple.com">gildas.mebada@exemple.com</a>
+            <a href="mailto:mebadandzielouisgildas@gmail.com">mebadandzielouisgildas@gmail.com</a>
           </div>
         </div>
       </div>

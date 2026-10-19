@@ -38,6 +38,84 @@
         @include flex(row, center, center, 0.9rem);
       }
     }
+
+    // ---------- Formulaire de contact ----------
+    .contact-form {
+      @include flex(column, stretch, stretch, 1.1rem);
+      width: min(100%, 40rem);
+      text-align: left;
+
+      .form-row {
+        display: grid;
+        gap: 1.1rem;
+
+        @include respond-to(sm) {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      label {
+        @include flex(column, flex-start, stretch, 0.4rem);
+
+        span {
+          font-size: 0.82rem;
+          font-weight: 600;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          color: $color-faint;
+        }
+      }
+
+      input:not([type="hidden"]),
+      textarea {
+        width: 100%;
+        padding: 0.85rem 1rem;
+        font: inherit;
+        font-size: 0.95rem;
+        color: $color-text;
+        background: rgba(11, 16, 14, 0.6);
+        border: 1px solid $color-border;
+        border-radius: $radius;
+        transition: border-color $transition, box-shadow $transition, background $transition;
+
+        &::placeholder {
+          color: $color-faint;
+        }
+
+        &:focus {
+          outline: none;
+          border-color: $color-accent;
+          background: rgba(11, 16, 14, 0.85);
+          box-shadow: 0 0 0 3px rgba(47, 230, 160, 0.15);
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 7.5rem;
+      }
+
+      .form-submit {
+        align-self: center;
+        margin-top: 0.3rem;
+        border: none;
+        cursor: pointer;
+      }
+    }
+
+    // Boutons alternatifs sous le formulaire (e-mail direct / GitHub)
+    .contact-alt {
+      @include flex(column, center, center, 0.8rem);
+
+      @include respond-to(sm) {
+        @include flex(row, center, center, 0.8rem);
+      }
+
+      .btn {
+        max-width: 100%;
+        font-family: $font-body;
+      }
+    }
   }
 
   .contact-cards {

@@ -1536,6 +1536,91 @@ strong {
     gap: 0.9rem;
   }
 }
+.contact .contact-wrap .contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  gap: 1.1rem;
+  width: min(100%, 40rem);
+  text-align: left;
+}
+.contact .contact-wrap .contact-form .form-row {
+  display: grid;
+  gap: 1.1rem;
+}
+@media (min-width: 640px) {
+  .contact .contact-wrap .contact-form .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.contact .contact-wrap .contact-form label {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0.4rem;
+}
+.contact .contact-wrap .contact-form label span {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6e837a;
+}
+.contact .contact-wrap .contact-form input:not([type=hidden]),
+.contact .contact-wrap .contact-form textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font: inherit;
+  font-size: 0.95rem;
+  color: #e9f2ed;
+  background: rgba(11, 16, 14, 0.6);
+  border: 1px solid rgba(150, 195, 170, 0.14);
+  border-radius: 14px;
+  transition: border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.contact .contact-wrap .contact-form input:not([type=hidden])::placeholder,
+.contact .contact-wrap .contact-form textarea::placeholder {
+  color: #6e837a;
+}
+.contact .contact-wrap .contact-form input:not([type=hidden]):focus,
+.contact .contact-wrap .contact-form textarea:focus {
+  outline: none;
+  border-color: #2fe6a0;
+  background: rgba(11, 16, 14, 0.85);
+  box-shadow: 0 0 0 3px rgba(47, 230, 160, 0.15);
+}
+.contact .contact-wrap .contact-form textarea {
+  resize: vertical;
+  min-height: 7.5rem;
+}
+.contact .contact-wrap .contact-form .form-submit {
+  align-self: center;
+  margin-top: 0.3rem;
+  border: none;
+  cursor: pointer;
+}
+.contact .contact-wrap .contact-alt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+@media (min-width: 640px) {
+  .contact .contact-wrap .contact-alt {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+  }
+}
+.contact .contact-wrap .contact-alt .btn {
+  max-width: 100%;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
 .contact .contact-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
