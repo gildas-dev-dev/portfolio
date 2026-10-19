@@ -1,0 +1,75 @@
+// ============================================================
+// FOOTER — Pied de page + bouton retour en haut
+// ============================================================
+
+@use "../abstracts" as *;
+
+.site-footer {
+  border-top: 1px solid $color-border;
+  background: rgba(9, 13, 11, 0.65);
+  padding-block: 2.6rem;
+
+  .footer-inner {
+    @include container;
+    @include flex(column, center, center, 1.2rem);
+    text-align: center;
+
+    @include respond-to(md) {
+      @include flex(row, space-between, center, 1.5rem);
+    }
+
+    .footer-brand {
+      font-family: $font-heading;
+      font-weight: 700;
+
+      span {
+        color: $color-accent;
+      }
+    }
+
+    .footer-links {
+      @include flex(row, center, center, 1.2rem);
+      font-size: 0.88rem;
+      color: $color-muted;
+
+      a:hover {
+        color: $color-accent;
+      }
+    }
+
+    .footer-meta {
+      font-size: 0.82rem;
+      color: $color-faint;
+    }
+  }
+}
+
+// ---------- Bouton retour en haut ----------
+.to-top {
+  position: fixed;
+  right: 1.4rem;
+  bottom: 1.4rem;
+  z-index: 90;
+  @include flex(row, center, center, 0);
+  width: 2.9rem;
+  height: 2.9rem;
+  border-radius: 50%;
+  background: $color-gradient;
+  color: #06120c;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 24px rgba(47, 230, 160, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.8rem);
+  transition: opacity $transition, transform $transition, visibility $transition;
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+}

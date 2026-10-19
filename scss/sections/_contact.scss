@@ -1,0 +1,78 @@
+// ============================================================
+// CONTACT — Appel à l'action + coordonnées
+// ============================================================
+
+@use "../abstracts" as *;
+
+.contact {
+  @include section-heading;
+
+  .contact-wrap {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(2rem, 5vw, 3.5rem);
+    border-radius: $radius-lg;
+    background:
+      radial-gradient(60vw 40vw at 90% -20%, rgba(47, 230, 160, 0.14), transparent 60%),
+      radial-gradient(50vw 36vw at 0% 120%, rgba(240, 179, 92, 0.1), transparent 60%),
+      $color-surface;
+    border: 1px solid $color-border;
+    text-align: center;
+    box-shadow: $shadow-card;
+
+    @include flex(column, center, center, 1.5rem);
+
+    h2 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+    }
+
+    .contact-sub {
+      max-width: 40rem;
+      color: $color-muted;
+    }
+
+    .contact-actions {
+      @include flex(column, center, center, 0.9rem);
+
+      @include respond-to(sm) {
+        @include flex(row, center, center, 0.9rem);
+      }
+    }
+  }
+
+  .contact-cards {
+    @include grid-auto(220px, 1.25rem);
+    margin-top: 1.5rem;
+
+    .contact-card {
+      @include flex(column, center, center, 0.5rem);
+      padding: 1.4rem 1rem;
+      text-align: center;
+
+      .icon-badge {
+        width: 3.4rem;
+        height: 3.4rem;
+        font-size: 1.5rem;
+        border-radius: 50%;
+      }
+
+      b {
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $color-faint;
+      }
+
+      span,
+      a {
+        font-size: 0.95rem;
+        color: $color-text;
+        word-break: break-all;
+      }
+
+      a:hover {
+        color: $color-accent;
+      }
+    }
+  }
+}

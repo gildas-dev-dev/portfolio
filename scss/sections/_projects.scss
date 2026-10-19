@@ -1,0 +1,150 @@
+// ============================================================
+// PROJETS — GICETECHA en vedette + GitHub
+// ============================================================
+
+@use "../abstracts" as *;
+
+.projects {
+  @include section-heading;
+
+  .projects-grid {
+    @include flex(column, flex-start, stretch, 1.5rem);
+
+    @include respond-to(md) {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+  }
+
+  // ---------- Projet vedette ----------
+  .project-featured {
+    @include flex(column, flex-start, stretch, 1.3rem);
+    padding: 2rem;
+    overflow: hidden;
+
+    // Fin liseré dégradé en haut de carte
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 4px;
+      background: $color-gradient;
+    }
+
+    .project-top {
+      @include flex(row, space-between, center, 1rem);
+      flex-wrap: wrap;
+    }
+
+    .project-name {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      letter-spacing: 0.02em;
+    }
+
+    .project-meaning {
+      font-family: $font-mono;
+      font-size: 0.8rem;
+      color: $color-faint;
+    }
+
+    .project-slogan {
+      padding: 0.85rem 1.2rem;
+      border-radius: $radius;
+      background: rgba(240, 179, 92, 0.08);
+      border: 1px dashed rgba(240, 179, 92, 0.35);
+      color: $color-amber;
+      font-style: italic;
+      font-size: 0.98rem;
+    }
+
+    .project-desc {
+      color: $color-muted;
+    }
+
+    // Feuille de route de la plateforme
+    .roadmap {
+      @include flex(column, flex-start, stretch, 0.75rem);
+
+      li {
+        @include flex(row, flex-start, flex-start, 0.7rem);
+        font-size: 0.93rem;
+        color: $color-muted;
+
+        .step-icon {
+          font-size: 1rem;
+          line-height: 1.6;
+        }
+
+        b {
+          color: $color-text;
+        }
+      }
+    }
+  }
+
+  // ---------- Carte secondaire ----------
+  .project-side {
+    @include flex(column, flex-start, stretch, 1.1rem);
+
+    .project-top {
+      @include flex(row, flex-start, center, 0.9rem);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    p {
+      font-size: 0.94rem;
+      color: $color-muted;
+    }
+
+    .project-links {
+      @include flex(column, flex-start, stretch, 0.7rem);
+
+      a {
+        @include flex(row, space-between, center, 0.8rem);
+        padding: 0.85rem 1rem;
+        border: 1px solid $color-border;
+        border-radius: $radius;
+        font-family: $font-mono;
+        font-size: 0.85rem;
+        color: $color-muted;
+        transition: color $transition, border-color $transition, transform $transition;
+
+        &:hover {
+          color: $color-accent;
+          border-color: $color-accent;
+          transform: translateX(4px);
+        }
+
+        .arrow {
+          transition: transform $transition;
+        }
+
+        &:hover .arrow {
+          transform: translateX(3px);
+        }
+      }
+    }
+  }
+
+  // Badge d'état (en cours / à venir)
+  .status {
+    @include flex(row, flex-start, center, 0.4rem);
+    padding: 0.32rem 0.8rem;
+    border-radius: $radius-pill;
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    &--wip {
+      color: $color-amber;
+      background: rgba(240, 179, 92, 0.1);
+      border: 1px solid rgba(240, 179, 92, 0.35);
+    }
+  }
+}

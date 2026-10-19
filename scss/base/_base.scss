@@ -1,0 +1,96 @@
+// ============================================================
+// BASE — Body, typographie globale, utilitaires
+// ============================================================
+
+@use "../abstracts" as *;
+
+body {
+  font-family: $font-body;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: $color-text;
+  background-color: $color-bg;
+  // Halos vert/ocre très légers en arrière-plan global
+  background-image:
+    radial-gradient(58vw 42vw at 85% -8%, rgba(47, 230, 160, 0.07), transparent 60%),
+    radial-gradient(50vw 38vw at -10% 30%, rgba(240, 179, 92, 0.05), transparent 60%);
+  background-repeat: no-repeat;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font-heading;
+  font-weight: 700;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+strong {
+  color: $color-text;
+  font-weight: 600;
+}
+
+// ---------- Utilitaires ----------
+.container {
+  @include container;
+}
+
+.section {
+  padding-block: $section-pad;
+  position: relative;
+
+  // Séparateur doux entre sections
+  & + .section {
+    border-top: 1px solid $color-border;
+  }
+}
+
+.text-muted {
+  color: $color-muted;
+}
+
+.text-accent {
+  color: $color-accent;
+}
+
+// Animation d'apparition au scroll (activée par main.js)
+.reveal {
+  opacity: 0;
+  transform: translateY(1.6rem);
+  transition: opacity $transition-slow, transform $transition-slow;
+
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  // Léger décalage en cascade pour les éléments frères
+  &[data-delay="1"] { transition-delay: 0.08s; }
+  &[data-delay="2"] { transition-delay: 0.16s; }
+  &[data-delay="3"] { transition-delay: 0.24s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

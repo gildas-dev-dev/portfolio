@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Louis Gildas MEBADA NDZIE — Développeur Frontend Angular & Contrôle Qualité</title>
+  <meta
+    name="description"
+    content="Portfolio de Louis Gildas MEBADA NDZIE, développeur frontend Angular et contrôle qualité chez Advance IT Group (Yaoundé, Cameroun). En route vers le Full Stack, le mobile et le DevOps."
+  />
+  <meta name="author" content="MEBADA NDZIE Louis Gildas" />
+  <meta property="og:title" content="Louis Gildas MEBADA NDZIE — Développeur Frontend Angular" />
+  <meta
+    property="og:description"
+    content="Développeur frontend Angular & contrôle qualité. Portfolio, compétences et projets, dont GICETECHA — allier la terre et la tech pour nourrir l'avenir."
+  />
+  <meta property="og:type" content="website" />
+
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232fe6a0'/%3E%3Cstop offset='1' stop-color='%23f0b35c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='43' font-family='Arial, sans-serif' font-size='34' font-weight='700' text-anchor='middle' fill='%2306120c'%3EG%3C/text%3E%3C/svg%3E"
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header" id="top">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="#accueil">
+        <span class="brand-mark">G</span>
+        Gildas<span class="brand-dot">.</span>dev
+      </a>
+
+      <button
+        class="nav-burger"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#experience">Expérience</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#methode">Méthode</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a
+        class="btn btn--ghost nav-cta"
+        href="https://github.com/gildas-dev-dev"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+        </svg>
+        GitHub
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ==================== HERO ==================== -->
+    <section class="hero section" id="accueil">
+      <div class="hero-inner">
+        <div class="hero-avatar">
+          <img
+            src="assets/img/photo-square.jpg"
+            alt="Portrait de Louis Gildas MEBADA NDZIE"
+            width="480"
+            height="480"
+          />
+        </div>
+
+        <p class="hero-hello">&lt; hello world /&gt; je suis</p>
+        <h1>Louis Gildas <span class="grad">MEBADA NDZIE</span></h1>
+
+        <p class="hero-role" aria-label="Rôles professionnels">
+          <span id="typewriter"></span><span class="caret" aria-hidden="true"></span>
+        </p>
+
+        <p class="hero-summary">
+          Développeur frontend <strong>Angular</strong> &amp; <strong>contrôle qualité</strong> chez
+          Advance IT Group depuis juillet 2024. Je conçois des interfaces pour des applications
+          métier, je les teste, et je participe à leur déploiement — en construction permanente
+          vers le <strong>Full Stack</strong>, le <strong>mobile</strong> et le
+          <strong>DevOps</strong>.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="#projets">Découvrir mes projets →</a>
+          <a class="btn btn--ghost" href="#contact">Me contacter</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat reveal" data-delay="1">
+            <span class="stat-value">1 an+</span>
+            <span class="stat-label">En poste</span>
+          </div>
+          <div class="stat reveal" data-delay="2">
+            <span class="stat-value">BTS</span>
+            <span class="stat-label">Génie logiciel · 2024</span>
+          </div>
+          <div class="stat reveal" data-delay="3">
+            <span class="stat-value">ERP</span>
+            <span class="stat-label">App métier en production</span>
+          </div>
+        </div>
+      </div>
+
+      <a class="scroll-hint" href="#apropos" aria-label="Défiler vers le bas">⌄</a>
+    </section>
+
+    <!-- ==================== À PROPOS ==================== -->
+    <section class="about section" id="apropos">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">01 · À propos</span>
+          <h2>Développer utile, vérifier fiable</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              Diplômé d'un <strong>BTS en Génie Logiciel</strong> (ESAA, 2024), je travaille chez
+              <strong>Advance IT Group</strong> où j'interviens sur deux fronts complémentaires :
+              le développement frontend avec <strong>Angular</strong> sur des applications métier,
+              et le <strong>contrôle qualité</strong> — tests fonctionnels, vérification d'API,
+              reproduction et suivi d'anomalies.
+            </p>
+            <p>
+              Cette double casquette me donne une vision complète du cycle de vie d'une
+              fonctionnalité : je l'écris, mais je sais aussi où et pourquoi elle casse. Au fil
+              des missions sur <strong>Aurore ERP</strong> (facturation, stocks, caisse,
+              comptabilité…), j'ai appris à comprendre des règles métier réelles et à assurer la
+              continuité d'applications utilisées tous les jours.
+            </p>
+            <p>
+              Je développe progressivement mes compétences en <strong>mobile avec Flutter</strong>,
+              en <strong>backend</strong> et en pratiques <strong>DevOps</strong>, avec l'objectif
+              de construire des applications complètes, fiables et adaptées aux réalités du
+              terrain.
+            </p>
+
+            <blockquote class="about-quote">
+              « Comprendre le problème avant d'écrire la solution : je code étape par étape, je
+              teste ce que je livre et je documente ce que je construis. »
+            </blockquote>
+          </div>
+
+          <aside class="about-card card reveal" data-delay="1">
+            <ul class="identity">
+              <li>
+                <span class="icon-badge" aria-hidden="true">👤</span>
+                <div><b>Nom</b><span>MEBADA NDZIE Louis Gildas</span></div>
+              </li>
+              <li>
+                <span class="icon-badge" aria-hidden="true">📍</span>
+                <div><b>Localisation</b><span>Yaoundé, Cameroun</span></div>
+              </li>
+              <li>
+                <span class="icon-badge" aria-hidden="true">💼</span>
+                <div><b>Poste actuel</b><span>Développeur Frontend Angular &amp; QA</span></div>
+              </li>
+              <li>
+                <span class="icon-badge" aria-hidden="true">🏢</span>
+                <div><b>Entreprise</b><span>Advance IT Group — depuis juil. 2024</span></div>
+              </li>
+              <li>
+                <span class="icon-badge" aria-hidden="true">🎓</span>
+                <div><b>Formation</b><span>BTS Génie Logiciel · ESAA · 2024</span></div>
+              </li>
+              <li>
+                <span class="icon-badge" aria-hidden="true">🧭</span>
+                <div><b>Cap</b><span>Full Stack · Mobile · DevOps</span></div>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== COMPÉTENCES ==================== -->
+    <section class="skills section" id="competences">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">02 · Compétences</span>
+          <h2>Ma boîte à outils, au niveau où elle est vraiment</h2>
+          <p class="section-sub">
+            Je distingue ce que je pratique professionnellement de ce que j'apprends activement —
+            pas de survende, juste du concret.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card card reveal">
+            <div class="skill-head">
+              <span class="icon-badge" aria-hidden="true">🎨</span>
+              <h3>Frontend — cœur de métier</h3>
+            </div>
+            <p class="skill-desc">
+              Interfaces d'applications métier au quotidien : composants, intégration d'API,
+              correction d'anomalies, responsive.
+            </p>
+            <ul class="tags">
+              <li class="tag tag--pro">Angular</li>
+              <li class="tag tag--pro">TypeScript</li>
+              <li class="tag tag--pro">JavaScript</li>
+              <li class="tag tag--pro">HTML5</li>
+              <li class="tag tag--pro">CSS3</li>
+              <li class="tag tag--pro">SCSS</li>
+              <li class="tag tag--pro">Bootstrap</li>
+            </ul>
+          </article>
+
+          <article class="skill-card card reveal" data-delay="1">
+            <div class="skill-head">
+              <span class="icon-badge" aria-hidden="true">🧪</span>
+              <h3>Qualité &amp; outils</h3>
+            </div>
+            <p class="skill-desc">
+              Tests fonctionnels, vérification d'API REST, suivi d'anomalies et de tickets,
+              gestion de versions.
+            </p>
+            <ul class="tags">
+              <li class="tag tag--pro">Postman</li>
+              <li class="tag tag--pro">Tests fonctionnels</li>
+              <li class="tag tag--pro">API REST</li>
+              <li class="tag tag--pro">Git</li>
+              <li class="tag tag--pro">GitLab</li>
+            </ul>
+          </article>
+
+          <article class="skill-card card reveal" data-delay="2">
+            <div class="skill-head">
+              <span class="icon-badge icon-badge--amber" aria-hidden="true">📱</span>
+              <h3>Mobile — en apprentissage</h3>
+            </div>
+            <p class="skill-desc">
+              Mon axe de progression mobile, appliqué au projet GICETECHA (application terrain).
+            </p>
+            <ul class="tags">
+              <li class="tag tag--learning">Flutter</li>
+              <li class="tag tag--learning">Dart</li>
+              <li class="tag tag--learning">React Native</li>
+            </ul>
+          </article>
+
+          <article class="skill-card card reveal" data-delay="3">
+            <div class="skill-head">
+              <span class="icon-badge icon-badge--amber" aria-hidden="true">⚙️</span>
+              <h3>Backend &amp; données — en progression</h3>
+            </div>
+            <p class="skill-desc">
+              Intégration d'API en production, et montée en puissance sur la construction de
+              services.
+            </p>
+            <ul class="tags">
+              <li class="tag tag--pro">API REST (intégration)</li>
+              <li class="tag tag--learning">Firebase</li>
+              <li class="tag tag--learning">Java</li>
+              <li class="tag tag--learning">Spring Boot</li>
+              <li class="tag tag--learning">MySQL</li>
+              <li class="tag tag--learning">PostgreSQL</li>
+              <li class="tag tag--learning">SQL Server</li>
+            </ul>
+          </article>
+
+          <article class="skill-card card reveal" data-delay="1">
+            <div class="skill-head">
+              <span class="icon-badge icon-badge--amber" aria-hidden="true">🚀</span>
+              <h3>DevOps &amp; environnements</h3>
+            </div>
+            <p class="skill-desc">
+              Exposition concrète aux déploiements et environnements applicatifs ; objectifs
+              d'approfondissement assumés.
+            </p>
+            <ul class="tags">
+              <li class="tag tag--pro">Déploiements test / staging</li>
+              <li class="tag tag--learning">Jenkins</li>
+              <li class="tag tag--learning">Docker</li>
+              <li class="tag tag--learning">Linux</li>
+              <li class="tag tag--learning">OpenVPN</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="skills-legend reveal">
+          <span class="legend-item"><span class="swatch swatch--pro"></span> Pratiqué en milieu professionnel</span>
+          <span class="legend-item"><span class="swatch swatch--learning"></span> En cours d'apprentissage</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EXPÉRIENCE ==================== -->
+    <section class="experience section" id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">03 · Expérience</span>
+          <h2>Ce que je fais tous les jours en entreprise</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <article class="job card">
+              <header class="job-head">
+                <h3>Développeur Frontend Angular <span>&amp;</span> Contrôle Qualité</h3>
+                <span class="job-period">juillet 2024 — aujourd'hui</span>
+              </header>
+
+              <div class="job-meta">
+                <span>🏢 <strong>Advance IT Group</strong></span>
+                <span>·</span>
+                <span>📍 Yaoundé, Cameroun</span>
+              </div>
+
+              <ul class="missions">
+                <li>
+                  <span><b>Développement frontend</b> — réalisation et évolution de composants
+                  <b>Angular / TypeScript</b> sur des applications métier, intégration d'API REST,
+                  correction d'anomalies et amélioration d'interfaces existantes.</span>
+                </li>
+                <li>
+                  <span><b>Contrôle qualité</b> — tests fonctionnels et vérification d'API avec
+                  <b>Postman</b>, identification et reproduction d'anomalies, validation des
+                  corrections, suivi des tickets sur <b>GitLab</b>.</span>
+                </li>
+                <li>
+                  <span><b>Déploiement &amp; environnements</b> — déploiements applicatifs en test
+                  et staging, vérification post-déploiement, mises à jour et préparation de
+                  livrables destinés aux environnements clients.</span>
+                </li>
+                <li>
+                  <span><b>Applications métier</b> — évolution et suivi d'<b>Aurore ERP</b> :
+                  comprendre les règles métier, corriger, vérifier les résultats et assurer la
+                  continuité de service.</span>
+                </li>
+              </ul>
+
+              <div class="domains">
+                <ul class="tags">
+                  <li class="tag">Facturation</li>
+                  <li class="tag">Gestion des stocks</li>
+                  <li class="tag">Mouvements de stock</li>
+                  <li class="tag">Ventes &amp; transferts</li>
+                  <li class="tag">Caisse</li>
+                  <li class="tag">Comptabilité</li>
+                  <li class="tag">Immobilisations</li>
+                  <li class="tag">Habilitations</li>
+                  <li class="tag">Point de vente</li>
+                  <li class="tag">Synchronisation d'environnements</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROJETS ==================== -->
+    <section class="projects section" id="projets">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">04 · Projets</span>
+          <h2>GICETECHA — allier la terre et la tech</h2>
+          <p class="section-sub">
+            Mon projet de référence : un système numérique complet au service d'une exploitation
+            agropastorale réelle.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Projet vedette -->
+          <article class="project-featured card reveal">
+            <div class="project-top">
+              <div>
+                <h3 class="project-name">🌾 GICETECHA</h3>
+                <p class="project-meaning">Gildas &amp; Cecilia Tech Agropastorale</p>
+              </div>
+              <span class="status status--wip">🔨 En cours de conception</span>
+            </div>
+
+            <p class="project-slogan">
+              « Allier la terre et la tech pour nourrir l'avenir. »
+            </p>
+
+            <p class="project-desc">
+              Relier les activités d'une exploitation agropastorale — élevage porcin, volailles,
+              production de maïs et de manioc — à des outils numériques de suivi et de gestion :
+              activités quotidiennes, stocks, suivi des travailleurs, consultation par les
+              responsables selon leurs droits. Un besoin opérationnel réel, pas une démo
+              technique.
+            </p>
+
+            <ul class="roadmap">
+              <li>
+                <span class="step-icon">🌐</span>
+                <span><b>Site vitrine</b> — présentation de l'entreprise, ses activités et ses
+                produits (HTML, SCSS, JS, puis Angular).</span>
+              </li>
+              <li>
+                <span class="step-icon">🖥️</span>
+                <span><b>Application web de gestion</b> — suivi des activités, gestion des données
+                autorisées selon le rôle (Angular, Firebase).</span>
+              </li>
+              <li>
+                <span class="step-icon">📱</span>
+                <span><b>Application mobile terrain</b> — consultation et transmission
+                d'informations sans ordinateur : nettoyage des porcheries, alimentation,
+                signalement d'un animal malade (Flutter).</span>
+              </li>
+              <li>
+                <span class="step-icon">🔐</span>
+                <span><b>Backend &amp; données</b> — API, authentification, rôles et droits
+                d'accès : un travailleur ne modifie pas seul les données sensibles.</span>
+              </li>
+              <li>
+                <span class="step-icon">🏛️</span>
+                <span><b>Architecture évolutive</b> — à terme, adaptable à plusieurs entreprises
+                avec leurs identités et licences.</span>
+              </li>
+            </ul>
+
+            <ul class="tags">
+              <li class="tag tag--pro">HTML5</li>
+              <li class="tag tag--pro">SCSS</li>
+              <li class="tag tag--pro">Angular</li>
+              <li class="tag tag--learning">Flutter</li>
+              <li class="tag tag--learning">Firebase</li>
+              <li class="tag tag--learning">API REST</li>
+            </ul>
+          </article>
+
+          <!-- Carte latérale -->
+          <aside class="project-side card reveal" data-delay="1">
+            <div class="project-top">
+              <span class="icon-badge" aria-hidden="true">🧑🏾‍💻</span>
+              <div>
+                <h3>Le reste de l'atelier</h3>
+                <p class="status status--wip" style="margin-top: 0.3rem;">🌱 En croissance</p>
+              </div>
+            </div>
+
+            <p>
+              Composants Angular, exercices Flutter, projets backend et expérimentations DevOps :
+              tout se construit pas à pas et se retrouve sur mon GitHub, README et captures à
+              l'appui.
+            </p>
+
+            <div class="project-links">
+              <a href="https://github.com/gildas-dev-dev" target="_blank" rel="noopener noreferrer">
+                <span>→ github.com/gildas-dev-dev</span>
+                <span class="arrow">↗</span>
+              </a>
+              <a href="https://github.com/gildas-dev-dev" target="_blank" rel="noopener noreferrer">
+                <span>Dépôts &amp; projets publics</span>
+                <span class="arrow">↗</span>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== MÉTHODE ==================== -->
+    <section class="method section" id="methode">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">05 · Méthode de travail</span>
+          <h2>Comment je construis, étape par étape</h2>
+        </div>
+
+        <ol class="steps">
+          <li class="step card reveal">
+            <h3>Comprendre le besoin</h3>
+            <p>Quel problème résout-on, pour quels utilisateurs, avec quelles contraintes métier&nbsp;?</p>
+          </li>
+          <li class="step card reveal" data-delay="1">
+            <h3>Concevoir avant de coder</h3>
+            <p>Fonctionnalités, structure des données, choix techniques justifiés — sur papier
+            d'abord.</p>
+          </li>
+          <li class="step card reveal" data-delay="2">
+            <h3>Développer par étapes</h3>
+            <p>Des bases solides, des incréments petits et vérifiables, du code que j'écris
+            moi-même.</p>
+          </li>
+          <li class="step card reveal" data-delay="3">
+            <h3>Tester chaque fonctionnalité</h3>
+            <p>Tests fonctionnels, vérification d'API, reproduction rigoureuse des anomalies.</p>
+          </li>
+          <li class="step card reveal" data-delay="1">
+            <h3>Déployer et vérifier</h3>
+            <p>Déploiement en environnement de test ou staging, puis validation du comportement
+            réel.</p>
+          </li>
+          <li class="step card reveal" data-delay="2">
+            <h3>Documenter</h3>
+            <p>Décisions, procédures et difficultés rencontrées — pour moi et pour ceux qui
+            reprennent.</p>
+          </li>
+        </ol>
+
+        <blockquote class="method-quote reveal">
+          « Je préfère comprendre pourquoi une technologie existe et quel problème elle résout,
+          corriger mes erreurs en les comprenant, et terminer ce que je commence. »
+          <cite>— ma manière d'apprendre</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ==================== FORMATION ==================== -->
+    <section class="education section" id="formation">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">06 · Formation</span>
+          <h2>Parcours académique &amp; feuille de route</h2>
+        </div>
+
+        <div class="education-grid">
+          <article class="degree card reveal">
+            <div class="degree-head">
+              <span class="icon-badge" aria-hidden="true">🎓</span>
+              <div>
+                <span class="degree-year">2023 — 2024</span>
+                <h3>BTS en Génie Logiciel</h3>
+                <span class="degree-school">ESAA — École Supérieure, Yaoundé</span>
+              </div>
+            </div>
+            <ul>
+              <li>Conception et développement d'applications</li>
+              <li>Programmation et logique algorithmique</li>
+              <li>Développement web et bases de données</li>
+              <li>Modélisation des systèmes informatiques</li>
+              <li>Maintenance et évolution d'applications</li>
+            </ul>
+          </article>
+
+          <aside class="roadmap-card card reveal" data-delay="1">
+            <h3>🧭 Ce que j'apprends activement</h3>
+            <ul class="roadmap-list">
+              <li>
+                <span class="icon-badge" aria-hidden="true">🅰️</span>
+                <div><b>Angular avancé</b> approfondir le cœur de métier</div>
+              </li>
+              <li>
+                <span class="icon-badge icon-badge--amber" aria-hidden="true">🦋</span>
+                <div><b>Flutter &amp; Firebase</b> le mobile appliqué à GICETECHA</div>
+              </li>
+              <li>
+                <span class="icon-badge icon-badge--amber" aria-hidden="true">☕</span>
+                <div><b>Java / Spring Boot</b> construire des API solides</div>
+              </li>
+              <li>
+                <span class="icon-badge icon-badge--amber" aria-hidden="true">🐳</span>
+                <div><b>Docker, Jenkins, Linux</b> vers le DevOps puis le DevSecOps</div>
+              </li>
+              <li>
+                <span class="icon-badge icon-badge--amber" aria-hidden="true">⚛️</span>
+                <div><b>React</b> élargir ma palette frontend</div>
+              </li>
+            </ul>
+            <p class="roadmap-target">
+              Objectif : un profil <b>junior Full Stack &amp; Mobile</b> solide, capable de
+              contribuer à des projets de bout en bout — échéance visée <b>mi-2027</b>.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="contact-wrap reveal">
+          <span class="section-tag">07 · Contact</span>
+          <h2>Un projet, un poste, une question&nbsp;?</h2>
+          <p class="contact-sub">
+            Que ce soit pour du développement frontend, du contrôle qualité ou échanger sur
+            GICETECHA, je suis toujours partant pour une bonne discussion technique.
+          </p>
+
+          <div class="contact-actions">
+            <!-- TODO : remplace par ton adresse e-mail professionnelle -->
+            <a class="btn btn--primary" href="mailto:gildas.mebada@exemple.com">
+              ✉️ Envoyer un e-mail
+            </a>
+            <a
+              class="btn btn--ghost"
+              href="https://github.com/gildas-dev-dev"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Voir mon GitHub ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-cards">
+          <div class="contact-card card reveal">
+            <span class="icon-badge" aria-hidden="true">📍</span>
+            <b>Localisation</b>
+            <span>Yaoundé, Cameroun — Nkolbisson</span>
+          </div>
+          <div class="contact-card card reveal" data-delay="1">
+            <span class="icon-badge" aria-hidden="true">💻</span>
+            <b>GitHub</b>
+            <a href="https://github.com/gildas-dev-dev" target="_blank" rel="noopener noreferrer">
+              gildas-dev-dev
+            </a>
+          </div>
+          <div class="contact-card card reveal" data-delay="2">
+            <span class="icon-badge" aria-hidden="true">✉️</span>
+            <b>E-mail</b>
+            <!-- TODO : remplace par ton adresse e-mail professionnelle -->
+            <a href="mailto:gildas.mebada@exemple.com">gildas.mebada@exemple.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-brand">Gildas<span>.</span>dev — MEBADA NDZIE Louis Gildas</p>
+        <p class="footer-meta">Conçu et codé à Yaoundé avec HTML, SCSS &amp; JavaScript.</p>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="https://github.com/gildas-dev-dev" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <p class="footer-meta">© <span id="year">2026</span> — Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <a href="#top" class="to-top" id="to-top" aria-label="Retour en haut de page">↑</a>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

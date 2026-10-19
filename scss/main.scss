@@ -1,0 +1,34 @@
+// ============================================================
+// MAIN — Point d'entrée : toute la feuille de style du portfolio
+// Architecture inspirée du pattern 7-1
+//
+// Compilation :
+//   sass scss/main.scss css/main.css
+//   sass --watch scss/main.scss css/main.css
+// ============================================================
+
+// ---------- Abstracts : variables & mixins (aucun CSS généré) ----------
+@use "abstracts/variables";
+@use "abstracts/mixins";
+
+// ---------- Base : reset & fondations ----------
+@use "base/reset";
+@use "base/base";
+
+// ---------- Layout : structures de page ----------
+@use "layout/header";
+@use "layout/footer";
+
+// ---------- Components : briques réutilisables ----------
+@use "components/buttons";
+@use "components/tags";
+
+// ---------- Sections : une feuille par section de page ----------
+@use "sections/hero";
+@use "sections/about";
+@use "sections/skills";
+@use "sections/experience";
+@use "sections/projects";
+@use "sections/method";
+@use "sections/education";
+@use "sections/contact";

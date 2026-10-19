@@ -1,0 +1,77 @@
+// ============================================================
+// À PROPOS — Présentation, fiche d'identité, axes de progression
+// ============================================================
+
+@use "../abstracts" as *;
+
+.about {
+  @include section-heading;
+
+  .about-grid {
+    display: grid;
+    gap: 2.2rem;
+    align-items: start;
+
+    @include respond-to(lg) {
+      grid-template-columns: 1.5fr 1fr;
+      gap: 3rem;
+    }
+  }
+
+  // ---------- Colonne texte ----------
+  .about-text {
+    @include flex(column, flex-start, stretch, 1.3rem);
+
+    p {
+      color: $color-muted;
+    }
+
+    .about-quote {
+      padding: 1.2rem 1.4rem;
+      border-left: 3px solid $color-accent;
+      border-radius: 0 $radius $radius 0;
+      background: rgba(47, 230, 160, 0.06);
+      font-style: italic;
+      color: $color-text;
+    }
+  }
+
+  // ---------- Colonne fiche identité ----------
+  .about-card {
+    .identity {
+      @include flex(column, flex-start, stretch, 0);
+
+      li {
+        @include flex(row, flex-start, center, 0.9rem);
+        padding: 0.85rem 0.2rem;
+        font-size: 0.94rem;
+        color: $color-muted;
+        border-bottom: 1px dashed $color-border;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .icon-badge {
+          width: 2.4rem;
+          height: 2.4rem;
+          font-size: 1.05rem;
+          border-radius: $radius-sm;
+        }
+
+        b {
+          display: block;
+          font-size: 0.72rem;
+          font-weight: 600;
+          letter-spacing: 0.09em;
+          text-transform: uppercase;
+          color: $color-faint;
+        }
+
+        span {
+          color: $color-text;
+        }
+      }
+    }
+  }
+}

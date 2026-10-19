@@ -1,0 +1,62 @@
+// ============================================================
+// COMPÉTENCES — 4 familles : frontend, qualité/devops, mobile, backend
+// ============================================================
+
+@use "../abstracts" as *;
+
+.skills {
+  @include section-heading;
+
+  .skills-grid {
+    @include grid-auto(260px, 1.25rem);
+  }
+
+  .skill-card {
+    @include flex(column, flex-start, stretch, 1.1rem);
+    padding: 1.6rem;
+
+    .skill-head {
+      @include flex(row, flex-start, center, 0.9rem);
+
+      h3 {
+        font-size: 1.08rem;
+      }
+    }
+
+    .skill-desc {
+      font-size: 0.92rem;
+      color: $color-muted;
+    }
+
+    .tags {
+      margin-top: auto; // pousse les badges vers le bas pour aligner
+    }
+  }
+
+  // Légende des niveaux
+  .skills-legend {
+    @include flex(row, center, center, 1.6rem);
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: $color-faint;
+
+    .legend-item {
+      @include flex(row, flex-start, center, 0.45rem);
+
+      .swatch {
+        width: 0.85rem;
+        height: 0.85rem;
+        border-radius: 4px;
+
+        &--pro {
+          background: rgba(47, 230, 160, 0.55);
+        }
+
+        &--learning {
+          background: rgba(240, 179, 92, 0.55);
+        }
+      }
+    }
+  }
+}

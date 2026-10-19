@@ -1,0 +1,112 @@
+// ============================================================
+// EXPÉRIENCE — Timeline chez Advance IT Group
+// ============================================================
+
+@use "../abstracts" as *;
+
+.experience {
+  @include section-heading;
+
+  .timeline {
+    position: relative;
+    @include flex(column, flex-start, stretch, 1.6rem);
+    padding-left: 1.9rem;
+
+    // Ligne verticale
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0.45rem;
+      top: 0.4rem;
+      bottom: 0.4rem;
+      width: 2px;
+      background: linear-gradient(
+        to bottom,
+        $color-accent,
+        rgba(47, 230, 160, 0.15) 85%,
+        transparent
+      );
+    }
+
+    .timeline-item {
+      position: relative;
+
+      // Point sur la ligne
+      &::before {
+        content: "";
+        position: absolute;
+        left: calc(-1.9rem + 0.05rem);
+        top: 1.9rem;
+        width: 0.85rem;
+        height: 0.85rem;
+        border-radius: 50%;
+        background: $color-bg;
+        border: 3px solid $color-accent;
+        box-shadow: 0 0 0 5px rgba(47, 230, 160, 0.12);
+      }
+    }
+  }
+
+  // ---------- Carte de poste ----------
+  .job {
+    @include flex(column, flex-start, stretch, 1.2rem);
+
+    .job-head {
+      @include flex(column, flex-start, stretch, 0.3rem);
+
+      @include respond-to(md) {
+        @include flex(row, space-between, flex-start, 1rem);
+      }
+
+      h3 {
+        font-size: 1.22rem;
+
+        span {
+            color: $color-accent;
+        }
+      }
+
+      .job-period {
+        font-family: $font-mono;
+        font-size: 0.8rem;
+        color: $color-amber;
+        white-space: nowrap;
+        padding-top: 0.25rem;
+      }
+    }
+
+    .job-meta {
+      @include flex(row, flex-start, center, 0.6rem);
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+      color: $color-muted;
+    }
+
+    // Missions regroupées par responsabilité
+    .missions {
+      @include flex(column, flex-start, stretch, 0.9rem);
+
+      li {
+        @include flex(row, flex-start, flex-start, 0.75rem);
+        color: $color-muted;
+        font-size: 0.95rem;
+
+        &::before {
+          content: "▸";
+          color: $color-accent;
+          font-size: 0.85rem;
+          line-height: 1.9;
+        }
+
+        b {
+          color: $color-text;
+        }
+      }
+    }
+
+    // Domaines métier croisés sur l'ERP
+    .domains {
+      margin-top: 0.4rem;
+    }
+  }
+}

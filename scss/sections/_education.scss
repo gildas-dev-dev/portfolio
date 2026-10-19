@@ -1,0 +1,97 @@
+// ============================================================
+// FORMATION — Diplôme + feuille de route d'apprentissage
+// ============================================================
+
+@use "../abstracts" as *;
+
+.education {
+  @include section-heading;
+
+  .education-grid {
+    @include grid-auto(280px, 1.5rem);
+    align-items: stretch;
+  }
+
+  // ---------- Diplôme ----------
+  .degree {
+    @include flex(column, flex-start, stretch, 1rem);
+
+    .degree-head {
+      @include flex(row, flex-start, center, 1rem);
+    }
+
+    .degree-year {
+      font-family: $font-mono;
+      font-size: 0.82rem;
+      color: $color-amber;
+    }
+
+    h3 {
+      font-size: 1.18rem;
+    }
+
+    .degree-school {
+      color: $color-accent;
+      font-weight: 600;
+    }
+
+    ul {
+      @include flex(column, flex-start, stretch, 0.45rem);
+
+      li {
+        @include flex(row, flex-start, center, 0.55rem);
+        font-size: 0.92rem;
+        color: $color-muted;
+
+        &::before {
+          content: "✓";
+          color: $color-accent;
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+
+  // ---------- Feuille de route ----------
+  .roadmap-card {
+    @include flex(column, flex-start, stretch, 1.1rem);
+    border: 1px dashed $color-border-strong;
+
+    h3 {
+      font-size: 1.18rem;
+    }
+
+    .roadmap-list {
+      @include flex(column, flex-start, stretch, 0.85rem);
+
+      li {
+        @include flex(row, flex-start, flex-start, 0.85rem);
+        font-size: 0.93rem;
+        color: $color-muted;
+
+        .icon-badge {
+          width: 2.2rem;
+          height: 2.2rem;
+          font-size: 0.95rem;
+          border-radius: $radius-sm;
+        }
+
+        b {
+          display: block;
+          color: $color-text;
+        }
+      }
+    }
+
+    .roadmap-target {
+      padding-top: 0.4rem;
+      font-size: 0.85rem;
+      color: $color-faint;
+      border-top: 1px dashed $color-border;
+
+      b {
+        color: $color-amber;
+      }
+    }
+  }
+}

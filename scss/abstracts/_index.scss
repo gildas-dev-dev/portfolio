@@ -1,0 +1,7 @@
+// ============================================================
+// INDEX — Point d'entrée du dossier abstracts
+// Permet `@use "../abstracts" as *` depuis les autres feuilles
+// ============================================================
+
+@forward "variables";
+@forward "mixins";

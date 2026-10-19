@@ -1,0 +1,77 @@
+// ============================================================
+// RESET — Base saine et cohérente entre navigateurs
+// ============================================================
+
+@use "../abstracts" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  // Compense la barre de navigation fixe lors des ancres
+  scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  // Pas de flash de surbrillance au tap sur mobile
+  -webkit-tap-highlight-color: transparent;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+::selection {
+  background: rgba(47, 230, 160, 0.28);
+  color: $color-text;
+}
+
+// Barre de défilement discrète
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-surface-2;
+  border-radius: $radius-pill;
+  border: 2px solid $color-bg;
+
+  &:hover {
+    background: $color-faint;
+  }
+}

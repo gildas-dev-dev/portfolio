@@ -1,0 +1,78 @@
+// ============================================================
+// TAGS & CARTES — Badges de technologies, cartes génériques
+// ============================================================
+
+@use "../abstracts" as *;
+
+// ---------- Badges de technologie ----------
+.tags {
+  @include flex(row, flex-start, center, 0.5rem);
+  flex-wrap: wrap;
+}
+
+.tag {
+  @include flex(row, flex-start, center, 0.4rem);
+  padding: 0.34rem 0.75rem;
+  font-family: $font-mono;
+  font-size: 0.76rem;
+  letter-spacing: 0.02em;
+  color: $color-muted;
+  background: $color-surface-2;
+  border: 1px solid $color-border;
+  border-radius: $radius-pill;
+  transition: color $transition, border-color $transition, transform $transition;
+
+  &:hover {
+    color: $color-accent;
+    border-color: $color-accent;
+    transform: translateY(-1px);
+  }
+
+  // Technologies du cœur de métier : liseré vert
+  &--pro {
+    color: $color-accent;
+    border-color: rgba(47, 230, 160, 0.35);
+    background: rgba(47, 230, 160, 0.08);
+  }
+
+  // Technologies en cours d'apprentissage : liseré ocre
+  &--learning {
+    color: $color-amber;
+    border-color: rgba(240, 179, 92, 0.32);
+    background: rgba(240, 179, 92, 0.07);
+  }
+}
+
+// ---------- Carte générique ----------
+.card {
+  position: relative;
+  padding: 1.6rem;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  transition: transform $transition, border-color $transition, background $transition;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: $color-border-strong;
+    background: $color-surface-2;
+  }
+}
+
+// Petit macaron circulaire (icônes de section)
+.icon-badge {
+  @include flex(row, center, center, 0);
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+  font-size: 1.35rem;
+  border-radius: $radius;
+  background: rgba(47, 230, 160, 0.1);
+  border: 1px solid rgba(47, 230, 160, 0.25);
+
+  &--amber {
+    background: rgba(240, 179, 92, 0.1);
+    border-color: rgba(240, 179, 92, 0.25);
+  }
+}

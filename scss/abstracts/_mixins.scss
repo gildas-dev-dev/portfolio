@@ -1,0 +1,93 @@
+// ============================================================
+// MIXINS — Utilitaires réutilisables
+// ============================================================
+
+@use "sass:map";
+@use "variables" as *;
+
+// Conteneur centré et borné
+@mixin container($max: $container-max) {
+  width: min(100% - (#{$container-pad} * 2), $max);
+  margin-inline: auto;
+}
+
+// Media query par point de rupture : @include respond-to(md) { ... }
+@mixin respond-to($bp) {
+  @if map.has-key($breakpoints, $bp) {
+    @media (min-width: map.get($breakpoints, $bp)) {
+      @content;
+    }
+  } @else {
+    @error "Breakpoint inconnu : `#{$bp}`. Utilise sm, md, lg ou xl.";
+  }
+}
+
+// Flexbox pratiques
+@mixin flex($dir: row, $justify: flex-start, $align: center, $gap: 0) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+  @if $gap != 0 {
+    gap: $gap;
+  }
+}
+
+// Grille responsive automatique
+@mixin grid-auto($min-col: 260px, $gap: 1.25rem) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-col, 1fr));
+  gap: $gap;
+}
+
+// Tronquer un texte sur n lignes
+@mixin line-clamp($lines: 3) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Texte dégradé (accroches)
+@mixin gradient-text {
+  background: $color-gradient;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+// Décor de section : étiquette + titre
+@mixin section-heading {
+  .section-head {
+    @include flex(column, flex-start, stretch, 0.9rem);
+    margin-bottom: clamp(2.5rem, 5vw, 3.75rem);
+
+    .section-tag {
+      @include flex(row, flex-start, center, 0.55rem);
+      font-family: $font-mono;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: $color-accent;
+
+      &::before {
+        content: "";
+        width: 2.2rem;
+        height: 2px;
+        background: $color-gradient;
+        border-radius: $radius-pill;
+      }
+    }
+
+    h2 {
+      font-size: clamp(1.9rem, 4.2vw, 2.7rem);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+    }
+
+    .section-sub {
+      max-width: 46rem;
+      color: $color-muted;
+    }
+  }
+}

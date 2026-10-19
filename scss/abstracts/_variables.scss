@@ -1,0 +1,50 @@
+// ============================================================
+// VARIABLES — Design system du portfolio
+// Modifie ces valeurs pour changer l'identité visuelle du site
+// ============================================================
+
+// ---------- Typographie ----------
+$font-heading: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+$font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+$font-mono: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+
+// ---------- Couleurs ----------
+$color-bg: #0b100e; // fond principal (noir teinté vert)
+$color-surface: #101713; // cartes
+$color-surface-2: #16211b; // cartes survolées / imbriquées
+$color-border: rgba(150, 195, 170, 0.14);
+$color-border-strong: rgba(150, 195, 170, 0.28);
+
+$color-text: #e9f2ed; // texte principal
+$color-muted: #9db3a9; // texte secondaire
+$color-faint: #6e837a; // texte discret (labels)
+
+$color-accent: #2fe6a0; // vert tech (CTA, liens, focus)
+$color-accent-strong: #17b37b;
+$color-amber: #f0b35c; // ocre "terre" (touche agropastorale)
+$color-gradient: linear-gradient(120deg, $color-accent 0%, #9ade5e 55%, $color-amber 110%);
+
+// ---------- Rayons, ombres, transitions ----------
+$radius-sm: 8px;
+$radius: 14px;
+$radius-lg: 22px;
+$radius-pill: 999px;
+
+$shadow-card: 0 10px 32px rgba(0, 0, 0, 0.35);
+$shadow-glow: 0 0 0 1px rgba(47, 230, 160, 0.22), 0 12px 40px rgba(47, 230, 160, 0.12);
+
+$transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+
+// ---------- Layout ----------
+$container-max: 1140px;
+$container-pad: clamp(1.25rem, 4vw, 2.5rem);
+$section-pad: clamp(4.5rem, 9vw, 7.5rem);
+
+// ---------- Breakpoints ----------
+$breakpoints: (
+  "sm": 640px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1200px,
+);
