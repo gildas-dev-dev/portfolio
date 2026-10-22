@@ -1648,6 +1648,30 @@ strong {
   border: none;
   cursor: pointer;
 }
+.contact .contact-wrap .contact-form .form-submit:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+.contact .contact-wrap .contact-form .form-status {
+  display: none;
+  padding: 0.9rem 1.1rem;
+  border-radius: 14px;
+  font-size: 0.92rem;
+  text-align: center;
+}
+.contact .contact-wrap .contact-form .form-status.is-visible {
+  display: block;
+}
+.contact .contact-wrap .contact-form .form-status--success {
+  color: #2fe6a0;
+  background: rgba(47, 230, 160, 0.1);
+  border: 1px solid rgba(47, 230, 160, 0.35);
+}
+.contact .contact-wrap .contact-form .form-status--error {
+  color: #f0b35c;
+  background: rgba(240, 179, 92, 0.1);
+  border: 1px solid rgba(240, 179, 92, 0.35);
+}
 .contact .contact-wrap .contact-alt {
   display: flex;
   flex-direction: column;

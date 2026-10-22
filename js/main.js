@@ -149,4 +149,61 @@
     // Ne démarre que lorsque le hero est visible
     setTimeout(tick, 400);
   }
+
+  /* ---------- Formulaire de contact : envoi sans quitter la page ----------
+     Le formulaire reste un POST Netlify natif (data-netlify) : sans JavaScript,
+     il part normalement vers /merci.html. Avec JavaScript, on l'envoie en
+     arrière-plan et on affiche la confirmation directement dans la page. */
+  const contactForm = document.querySelector(".contact-form");
+  const formStatus = document.querySelector(".contact-form .form-status");
+
+  function showFormStatus(message, type) {
+    if (!formStatus) return;
+    formStatus.textContent = message;
+    formStatus.className = "form-status is-visible form-status--" + type;
+  }
+
+  if (contactForm && formStatus) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const submitBtn = contactForm.querySelector(".form-submit");
+      const initialLabel = submitBtn ? submitBtn.textContent : "";
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Envoi en cours…";
+      }
+
+      // `form-name` est injecté par Netlify au déploiement : il est donc déjà
+      // présent dans le FormData au moment de l'envoi.
+      const body = new URLSearchParams(new FormData(contactForm)).toString();
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body,
+      })
+        .then(function (response) {
+          if (!response.ok) throw new Error("HTTP " + response.status);
+          contactForm.reset();
+          showFormStatus(
+            "Merci ! Votre message est bien arrivé — je réponds sous 24 à 48 h.",
+            "success"
+          );
+        })
+        .catch(function () {
+          showFormStatus(
+            "L'envoi a échoué. Écrivez-moi directement : mebadandzielouisgildas@gmail.com",
+            "error"
+          );
+        })
+        .then(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = initialLabel;
+          }
+        });
+    });
+  }
 })();
