@@ -40,9 +40,12 @@ portfolio/
 ├── index.html              # Page unique (toutes les sections)
 ├── server.js               # Petit serveur statique de dev (npm run dev)
 ├── assets/
+│   ├── cv/
+│   │   └── MEBADA_NDZIE_LOUIS_GILDAS_CV.pdf  # CV téléchargé depuis le hero
 │   └── img/
 │       ├── photo-square.jpg     # Portrait recadré 480×480 (hero)
-│       └── portrait-original.jpg # Photo d'origine
+│       ├── og-image.png         # Aperçu 1200×630 des partages (og:image)
+│       └── portrait-original.jpg # Photo d'origine (non affichée par le site)
 ├── css/
 │   └── main.css            # CSS compilé (ne pas éditer à la main)
 ├── js/
@@ -87,7 +90,7 @@ sur l'image d'origine.)
 
 ## 🎨 Personnaliser le thème
 
-Tout l'identité visuelle se règle dans **`scss/abstracts/_variables.scss`** :
+Toute l'identité visuelle se règle dans **`scss/abstracts/_variables.scss`** :
 
 - `$color-accent` : couleur principale (vert tech) ;
 - `$color-amber` : couleur secondaire (ocre « terre », clin d'œil agropastoral) ;
@@ -96,12 +99,28 @@ Tout l'identité visuelle se règle dans **`scss/abstracts/_variables.scss`** :
 
 Change une variable, recompile, c'est reflété partout.
 
-## ✏️ Champs à compléter avant mise en ligne
+## ✏️ Reste à faire
 
 - [x] **Photo de profil** — intégrée dans le hero (`assets/img/`) ;
 - [x] **E-mail** — `mebadandzielouisgildas@gmail.com` (formulaire + liens directs) ;
-- [ ] **LinkedIn / autres liens** : section contact;
-- [ ] **Projets** : ajouter des cartes au fur et à mesure des dépôts GitHub publiés.
+- [x] **CV téléchargeable** — `assets/cv/` + bouton dans le hero ;
+- [x] **Aperçu de partage** — `og-image.png` 1200×630 + balises Open Graph / Twitter ;
+- [ ] **LinkedIn** — le bouton est prêt mais commenté dans `index.html` (section Contact,
+      bloc `contact-alt`) : renseigner l'URL puis décommenter ;
+- [ ] **Descriptions des projets** — les 3 cartes « SnapFace / Argent Bank / Gestion des
+      tâches » ont été décrites à partir de la structure des dépôts, pas du code lui-même :
+      à relire et enrichir (capture d'écran, ce que le projet fait vraiment) ;
+- [ ] **READMEs GitHub** — aucun dépôt n'a de description ni de README : c'est la première
+      chose qu'un recruteur regarde sur le profil.
+
+### Régénérer l'image d'aperçu
+
+`og-image.png` est générée par un script (`sharp` + SVG). À relancer si le portrait ou le
+titre changent :
+
+```bash
+node tools/make-og.js
+```
 
 ## 📬 Formulaire de contact (FormSubmit)
 
@@ -120,11 +139,16 @@ Pour changer d'adresse e-mail, modifie 3 endroits dans `index.html` :
 
 ## 🌍 Déploiement
 
-Site 100 % statique : n'importe quel hébergeur statique convient.
+Site 100 % statique, hébergé en **production sur Netlify** :
+<https://portfolio-gildas.netlify.app> (c'est cette URL qui sert de `canonical` et d'URL
+Open Graph).
 
-- **GitHub Pages** : pousse le dossier sur un dépôt `ton-pseudo.github.io`, ou Settings → Pages;
-- **Netlify / Vercel** : glisser-déposer le dossier, rien à configurer;
-- Pense à commiter le `css/main.css` compilé pour que l'hébergeur n'ait rien à build.
+- **Netlify** — hébergement actuel, redéploiement automatique depuis le dépôt GitHub ;
+- **GitHub Pages** — un workflow (`.github/workflows/deploy-pages.yml`) publie aussi le
+  site à chaque push sur `main`. ⚠️ Il nécessite **une seule activation manuelle** :
+  *Settings → Pages → Source = « GitHub Actions »*. Sans ce réglage, le workflow échoue à
+  l'étape « Configurer Pages » (le jeton d'action n'a pas le droit d'activer Pages lui-même).
+- Pense à commiter le `css/main.css` compilé pour que l'hébergeur n'ait rien à builder.
 
 ---
 

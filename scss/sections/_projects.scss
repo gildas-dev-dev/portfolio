@@ -147,4 +147,46 @@
       border: 1px solid rgba(240, 179, 92, 0.35);
     }
   }
+
+  // ---------- Grille de projets complémentaires ----------
+  .project-cards {
+    @include grid-auto(250px, 1.1rem);
+    margin-top: 1.5rem;
+
+    .project-card {
+      @include flex(column, flex-start, stretch, 0.85rem);
+
+      h3 {
+        font-size: 1.08rem;
+        letter-spacing: -0.01em;
+      }
+
+      .project-card-desc {
+        // Pousse les liens en bas pour aligner les cartes entre elles
+        flex: 1;
+        font-size: 0.91rem;
+        color: $color-muted;
+      }
+
+      .project-card-links {
+        @include flex(row, flex-start, center, 0.55rem);
+        flex-wrap: wrap;
+
+        a {
+          padding: 0.4rem 0.8rem;
+          font-family: $font-mono;
+          font-size: 0.78rem;
+          color: $color-muted;
+          border: 1px solid $color-border;
+          border-radius: $radius-pill;
+          transition: color $transition, border-color $transition;
+
+          &:hover {
+            color: $color-accent;
+            border-color: $color-accent;
+          }
+        }
+      }
+    }
+  }
 }

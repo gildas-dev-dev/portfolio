@@ -1,5 +1,12 @@
-# Déploiement automatique du portfolio sur GitHub Pages
-# Se déclenche à chaque push sur main (ou manuellement via workflow_dispatch).
+# Déploiement du portfolio sur GitHub Pages.
+#
+# ⚠️ PRÉREQUIS UNIQUE (à faire une seule fois, dans le navigateur) :
+#   Settings → Pages → « Build and deployment » → Source = « GitHub Actions ».
+#   Tant que ce réglage n'est pas fait, ce workflow échoue à l'étape
+#   « Configurer Pages » : l'API refuse d'activer Pages avec le jeton du
+#   workflow (droits d'administration requis).
+#
+# Ensuite, chaque push sur main republie le site automatiquement.
 name: Déploiement GitHub Pages
 
 on:
@@ -12,9 +19,11 @@ permissions:
   pages: write
   id-token: write
 
+# Un seul déploiement à la fois ; on n'annule pas celui en cours pour ne pas
+# laisser le site dans un état intermédiaire.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -26,10 +35,12 @@ jobs:
       - name: Récupérer le code
         uses: actions/checkout@v4
 
-      - name: Configurer Pages (activation automatique)
+      # `enablement: true` a été retiré : c'est cet appel qui échouait
+      # (il tente d'activer Pages via l'API, ce qui exige des droits admin).
+      # Une fois Pages activé côté Settings, cette étape ne fait que lire
+      # la configuration.
+      - name: Configurer Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Préparer le site statique
         uses: actions/upload-pages-artifact@v3

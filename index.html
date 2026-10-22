@@ -9,12 +9,34 @@
     content="Portfolio de Louis Gildas MEBADA NDZIE, développeur frontend Angular et contrôle qualité chez Advance IT Group (Yaoundé, Cameroun). En route vers le Full Stack, le mobile et le DevOps."
   />
   <meta name="author" content="MEBADA NDZIE Louis Gildas" />
+  <link rel="canonical" href="https://portfolio-gildas.netlify.app/" />
+  <meta name="theme-color" content="#0b100e" />
+
+  <!-- ==================== Open Graph / réseaux sociaux ==================== -->
+  <meta property="og:type" content="website" />
   <meta property="og:title" content="Louis Gildas MEBADA NDZIE — Développeur Frontend Angular" />
   <meta
     property="og:description"
     content="Développeur frontend Angular & contrôle qualité. Portfolio, compétences et projets, dont GICETECHA — allier la terre et la tech pour nourrir l'avenir."
   />
-  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://portfolio-gildas.netlify.app/" />
+  <meta property="og:site_name" content="Gildas.dev" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:image" content="https://portfolio-gildas.netlify.app/assets/img/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta
+    property="og:image:alt"
+    content="Louis Gildas MEBADA NDZIE — Développeur Frontend Angular & Contrôle Qualité"
+  />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Louis Gildas MEBADA NDZIE — Développeur Frontend Angular" />
+  <meta
+    name="twitter:description"
+    content="Développeur frontend Angular & contrôle qualité chez Advance IT Group (Yaoundé). Vers le Full Stack, le mobile et le DevOps."
+  />
+  <meta name="twitter:image" content="https://portfolio-gildas.netlify.app/assets/img/og-image.png" />
 
   <link
     rel="icon"
@@ -29,6 +51,45 @@
   />
 
   <link rel="stylesheet" href="css/main.css" />
+
+  <!-- Les blocs .reveal ne sont révélés que par main.js : sans JavaScript,
+       on force leur affichage plutôt que de laisser la page vide. -->
+  <noscript>
+    <style>
+      .reveal { opacity: 1 !important; transform: none !important; }
+      #typewriter { display: none; }
+    </style>
+  </noscript>
+
+  <!-- Données structurées : aident les moteurs de recherche à comprendre le profil -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Louis Gildas MEBADA NDZIE",
+      "givenName": "Louis Gildas",
+      "familyName": "MEBADA NDZIE",
+      "jobTitle": "Développeur Frontend Angular & Contrôle Qualité",
+      "description": "Développeur frontend Angular et contrôle qualité chez Advance IT Group, à Yaoundé. En progression vers le Full Stack, le mobile et le DevOps.",
+      "url": "https://portfolio-gildas.netlify.app/",
+      "image": "https://portfolio-gildas.netlify.app/assets/img/photo-square.jpg",
+      "email": "mailto:mebadandzielouisgildas@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Yaoundé",
+        "addressCountry": "CM"
+      },
+      "worksFor": { "@type": "Organization", "name": "Advance IT Group" },
+      "alumniOf": { "@type": "EducationalOrganization", "name": "ESAA — École Supérieure, Yaoundé" },
+      "knowsAbout": [
+        "Angular", "TypeScript", "JavaScript", "HTML5", "CSS3", "SCSS",
+        "API REST", "Postman", "Git", "GitLab",
+        "Contrôle qualité", "Tests fonctionnels",
+        "Flutter", "Dart", "Firebase", "Java", "Spring Boot"
+      ],
+      "sameAs": ["https://github.com/gildas-dev-dev"]
+    }
+  </script>
 </head>
 <body>
 
@@ -56,6 +117,7 @@
         <li><a href="#experience">Expérience</a></li>
         <li><a href="#projets">Projets</a></li>
         <li><a href="#methode">Méthode</a></li>
+        <li><a href="#formation">Formation</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
@@ -83,6 +145,8 @@
             alt="Portrait de Louis Gildas MEBADA NDZIE"
             width="480"
             height="480"
+            fetchpriority="high"
+            decoding="async"
           />
         </div>
 
@@ -103,12 +167,22 @@
 
         <div class="hero-actions">
           <a class="btn btn--primary" href="#projets">Découvrir mes projets →</a>
+          <a
+            class="btn btn--ghost"
+            href="assets/cv/MEBADA_NDZIE_LOUIS_GILDAS_CV.pdf"
+            download
+            target="_blank"
+            rel="noopener"
+          >
+            ↓ Télécharger mon CV
+          </a>
           <a class="btn btn--ghost" href="#contact">Me contacter</a>
         </div>
 
         <div class="hero-stats">
+          <!-- À mettre à jour chaque année : poste depuis juillet 2024 -->
           <div class="stat reveal" data-delay="1">
-            <span class="stat-value">1 an+</span>
+            <span class="stat-value">2 ans+</span>
             <span class="stat-label">En poste</span>
           </div>
           <div class="stat reveal" data-delay="2">
@@ -466,12 +540,60 @@
                 <span>→ github.com/gildas-dev-dev</span>
                 <span class="arrow">↗</span>
               </a>
-              <a href="https://github.com/gildas-dev-dev" target="_blank" rel="noopener noreferrer">
-                <span>Dépôts &amp; projets publics</span>
-                <span class="arrow">↗</span>
-              </a>
             </div>
           </aside>
+        </div>
+
+        <!-- Projets complémentaires. Descriptions déduites de la structure des dépôts :
+             à enrichir au fil des README (cf. README.md). -->
+        <div class="project-cards">
+          <article class="project-card card reveal">
+            <h3>SnapFace</h3>
+            <p class="project-card-desc">
+              Application <b>Angular</b> multi-pages : routage, composants réutilisables,
+              services et modèles typés, page 404 dédiée.
+            </p>
+            <ul class="tags">
+              <li class="tag tag--pro">Angular</li>
+              <li class="tag tag--pro">TypeScript</li>
+              <li class="tag tag--pro">SCSS</li>
+            </ul>
+            <div class="project-card-links">
+              <a href="https://gildas-dev-dev.github.io/snapface/" target="_blank" rel="noopener noreferrer">Démo ↗</a>
+              <a href="https://github.com/gildas-dev-dev/snapface" target="_blank" rel="noopener noreferrer">Code</a>
+            </div>
+          </article>
+
+          <article class="project-card card reveal" data-delay="1">
+            <h3>Argent Bank</h3>
+            <p class="project-card-desc">
+              Interface bancaire en <b>Angular</b> : page d'accueil, connexion (sign-in) et espace
+              utilisateur, navigation par routes.
+            </p>
+            <ul class="tags">
+              <li class="tag tag--pro">Angular</li>
+              <li class="tag tag--pro">TypeScript</li>
+            </ul>
+            <div class="project-card-links">
+              <a href="https://github.com/gildas-dev-dev/argent-bank" target="_blank" rel="noopener noreferrer">Code</a>
+            </div>
+          </article>
+
+          <article class="project-card card reveal" data-delay="2">
+            <h3>Gestion des tâches</h3>
+            <p class="project-card-desc">
+              Interface de gestion de tâches en <b>HTML, CSS et JavaScript</b> — manipulation du
+              DOM et interactions sans framework.
+            </p>
+            <ul class="tags">
+              <li class="tag tag--pro">HTML5</li>
+              <li class="tag tag--pro">CSS3</li>
+              <li class="tag tag--pro">JavaScript</li>
+            </ul>
+            <div class="project-card-links">
+              <a href="https://github.com/gildas-dev-dev/gestion-taches" target="_blank" rel="noopener noreferrer">Code</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -642,6 +764,11 @@
             >
               GitHub ↗
             </a>
+            <!-- TODO : renseigner l'URL LinkedIn puis décommenter ce bouton.
+            <a class="btn btn--ghost" href="https://www.linkedin.com/in/TON-PROFIL" target="_blank" rel="noopener noreferrer">
+              LinkedIn ↗
+            </a>
+            -->
           </div>
         </div>
 
