@@ -123,6 +123,19 @@ titre changent :
 node tools/make-og.js
 ```
 
+### Régénérer le CV (PDF)
+
+Le CV n'est pas un binaire opaque : sa source est **`cv.html`** (page A4 autonome, non liée
+depuis le site). Après modification, on régénère le PDF avec Chrome :
+
+```bash
+chrome --headless --print-to-pdf=assets/cv/MEBADA_NDZIE_LOUIS_GILDAS_CV.pdf \
+       --no-pdf-header-footer cv.html
+```
+
+`cv.html` s'ouvre aussi très bien dans un navigateur : une feuille A4 blanche y est simulée,
+donc ce que vous voyez est ce qui sera imprimé.
+
 ## 📬 Formulaire de contact (Netlify Forms)
 
 Le formulaire de la section Contact n'a **aucun backend** : il est pris en charge nativement
