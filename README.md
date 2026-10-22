@@ -38,6 +38,7 @@ python -m http.server 4173
 ```
 portfolio/
 ├── index.html              # Page unique (toutes les sections)
+├── merci.html              # Page de confirmation après envoi du formulaire
 ├── server.js               # Petit serveur statique de dev (npm run dev)
 ├── assets/
 │   ├── cv/
@@ -122,20 +123,30 @@ titre changent :
 node tools/make-og.js
 ```
 
-## 📬 Formulaire de contact (FormSubmit)
+## 📬 Formulaire de contact (Netlify Forms)
 
-Le formulaire de la section Contact n'a **aucun backend** : il poste les messages sur
-[formsubmit.co](https://formsubmit.co), qui les relaie sur `mebadandzielouisgildas@gmail.com`.
+Le formulaire de la section Contact n'a **aucun backend** : il est pris en charge nativement
+par Netlify. Le `<form>` porte `data-netlify="true"`, un `name="contact"` et une redirection
+`action="/merci.html"` vers la page de confirmation.
 
-> ⚠️ **Première utilisation** : le tout premier envoi du formulaire déclenche un
-> **e-mail d'activation** de FormSubmit sur ta boîte — clique sur le lien qu'il contient
-> (une seule fois). Ensuite, tous les messages du site arrivent directement dans ta boîte.
+> ⚠️ **Prérequis, une seule fois** : dans Netlify, *Forms* → **Enable form detection**,
+> puis **redéployer**. Sans cette activation, l'envoi renvoie une page 404.
+>
+> Ensuite : les messages arrivent dans *Forms → Submissions*, et par e-mail si vous ajoutez
+> une notification via *Forms → Submission notifications → Add notification*.
 
-Pour changer d'adresse e-mail, modifie 3 endroits dans `index.html` :
+Ce choix remplace **FormSubmit**, qui exigeait une activation par e-mail au premier envoi —
+tant que ce lien n'était pas cliqué, toutes les soumissions étaient silencieusement perdues.
 
-1. l'attribut `action` du `<form class="contact-form">` ;
-2. le lien `mailto:` de la zone « contact-alt » ;
-3. la carte « E-mail » des `contact-cards`.
+Limite de l'offre Netlify : 100 soumissions par mois. Le formulaire ne fonctionne que sur
+**Netlify** (pas sur GitHub Pages).
+
+Pour changer d'adresse e-mail, modifie 2 endroits dans `index.html` :
+
+1. le lien `mailto:` de la zone « contact-alt » ;
+2. la carte « E-mail » des `contact-cards`.
+
+(L'adresse de réception des messages se règle dans les notifications Netlify, pas dans le HTML.)
 
 ## 🌍 Déploiement
 

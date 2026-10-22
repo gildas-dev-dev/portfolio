@@ -717,19 +717,22 @@
             dessous.
           </p>
 
-          <!-- Formulaire sans backend : FormSubmit relaie les messages sur la boîte mail.
-               La première soumission déclenche un e-mail d'activation à confirmer une fois. -->
+          <!-- Formulaire géré par Netlify Forms (aucun backend, aucun service tiers).
+               Prérequis, une seule fois : Netlify > Forms > « Enable form detection »,
+               puis redéployer. Les messages arrivent dans Forms > Submissions et par e-mail
+               si une notification est configurée. -->
           <form
             class="contact-form"
-            action="https://formsubmit.co/mebadandzielouisgildas@gmail.com"
+            name="contact"
             method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            action="/merci.html"
           >
-            <input type="hidden" name="_subject" value="📩 Nouveau message depuis le portfolio" />
-            <input type="hidden" name="_template" value="box" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_autoresponse" value="Merci pour ton message ! Je te réponds dès que possible — Louis Gildas" />
             <!-- Piège anti-spam : les bots remplissent ce champ, les humains ne le voient pas -->
-            <input type="text" name="_honey" style="display: none" tabindex="-1" autocomplete="off" />
+            <p hidden>
+              <label>Ne rien saisir ici : <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+            </p>
 
             <div class="form-row">
               <label>
